@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="components/header.css">
+<header class="bg-danger navbar sticky-top">
+    <div class="logo">my logo</div>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <form method="post">
+        <nav class="nav-bar sticky-top ">
+            <ul>
+                <li>
+                    <a  href="home.php" id="home" onclick="act(this.id)">Home</a>
+                </li>
+                <li>
+                    <a href="Facilites.php" id="Facilites" onclick="act(this.id)">Facilites</a>
+                </li>
+                <li>
+                    <a href="Request.php" id="Request" onclick="act(this.id)">Request Blood</a>
+                </li>
+                <li>
+                    <a href="about-us.php" id="About" onclick="act(this.id)">About us</a>
+                </li>
+                <li>
+                    <a href="Contact.php" id="Contact" onclick="act(this.id)">Contact us</a>
+                </li>
+                <li>
+                    <a href="Profile.php" id="Profile" onclick="act(this.id)">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </form>
+</header>
+<script>
+    hamburger = document.querySelector(".hamburger");
+    hamburger.onclick = function(){
+        navbar = document.querySelector(".nav-bar");
+        navbar.classList.toggle("active");
+    }
+    
+
+    function act(va){
+        localStorage.setItem('active',va);
+    }
+        var itm = localStorage.getItem('active');
+        var add = document.getElementById(itm);
+        add.classList.add('active');
+        var remove = document.getElementsByClassName('active');
+        remove.classList.remove("active");
+   
+</script>
